@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--CSS-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
+    <!--font-->
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+</head>
+  <body>
+    {% block content%} 
+    <div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-body-tertiary" style="width: 380px; height: 800px; overflow-y: scroll;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; margin-left: 1%;">
+      <a href="/" class="d-flex align-items-center flex-shrink-0 p-3 link-body-emphasis text-decoration-none border-bottom">
+        <svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
+        <span class="fs-2 center" style="font-family: 'Lilita One', cursive;">List group</span>
+      </a>
+      <div class="list-group list-group-flush border-bottom scrollarea">
+        <a href="#" class="list-group-item list-group-item-action active py-3 lh-sm" aria-current="true">
+          <div class="d-flex w-100 align-items-center justify-content-between">
+            <strong class="mb-1"> Cancer</strong>
+            <small>Today</small>
+          </div>
+          <div class="col-10 mb-1 small">Jhon : Lorem ipsum dolor sit amet.</div>
+          <div class="col-10 mb-1 small"></div>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action py-3 lh-sm">
+          <div class="d-flex w-100 align-items-center justify-content-between">
+            <strong class="mb-1">Heart disease</strong>
+            <small class="text-body-secondary">Tues</small>
+          </div>
+          <div class="col-10 mb-1 small"> Rudi : Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, distinctio!</div>
+        </a>
+     
+    
+      </div>
+    </div>
+    <div class="container-chat" style="padding-bottom: 3%; margin-top: -31%; height: 75vh; padding-top: -20px;">
+      <h1></h1>
+      <div id="chat-container" style=" margin-left: 3%;"></div>
+      <div class="form">
+      <input type="text" id="message-input" placeholder="Type your message...">
+      <button id="send-button"><img src="{{ url_for('static', filename='images/send (1).png') }}" ></button>
+  </div>
+      <!-- <script>
+          $(document).ready(function() {
+              $("#send-button").click(function() {
+                  var message = $("#message-input").val();
+  
+                  $.ajax({
+                      url: "/chat",
+                      type: "POST",
+                      dataType: "json",
+                      data: { message: message },
+                      success: function(response) {
+                          $("#chat-container").append("<p class='user' ><strong>You:<br></strong> " + message + "</p>");
+                          $("#chat-container").append("<p class='bot'><strong>Bot:<br></strong> " + response + "</p>");
+                          $("#message-input").val("");
+                          $botMessage.addClass("slide");
+                      },
+                      error: function(error) {
+                          console.log(error);
+                      }
+                  });
+              });
+          });
+      </script> -->
+      <div class="pesan1"style="border: 2px solid black; max-width: 600px; border-radius:8px;margin-left :5%; margin-top:-40%; padding:5px;     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;">
+        <div class="name"><u>Jhon</u></div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse vel a deserunt tenetur eos est id magnam aliquam minus. Iure!</p>
+        <div class="time" style="font-size: 1; float: right; right: 4; margin-top: -4%;">20.21</div>
+      </div>
+
+      <div class="pesan2"style="border: 2px solid green; max-width: 600px; border-radius:8px;margin-left :5%; margin-top: 3%; padding:5px;     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;">
+        <div class="name2"><u>Jenny</u></div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mt aliquid cu us nihil modi aspernatur sint beatae expedita sapiente repellendus.</p>
+        <div class="time2" style="font-size: 1; float: right; right: 4; margin-top: -4%;">20.25</div>
+      </div>
+
+      <div class="pesan3"style="border: 2px solid blue; max-width: 600px; border-radius:8px;margin-left :60%; margin-top: 3%; padding:5px;     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;">
+        <div class="name3"><u>You</u></div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae labore, omnis quae quod dignissimos fugit obcaecati aspernatur ab, cumque, neque tenetur amet harum recusandae repudiandae maxime quos fugiat aliquid cum voluptatum! Natus nihil modi aspernatur sint beatae expedita sapiente repellendus.</p>
+        <div class="time3" style="font-size: 1; float: right; right: 4; margin-top: -4%;">20.25</div>
+      </div>
+
+      <div class="pesan4"style="border: 2px solid red; max-width: 600px; border-radius:8px;margin-left :5%; margin-top: 3%; padding:5px;     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;">
+        <div class="name4"><u>Jhoe</u></div>
+        <p>yes</p>
+        <div class="time4" style="font-size: 1; float: right; right: 4; margin-top: -4%;">20.25</div>
+      </div>
+    </div>
+    <!-- Optional JavaScript; choose one of the two! -->
+    {% endblock %}
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

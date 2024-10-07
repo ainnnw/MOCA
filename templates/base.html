@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--CSS-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
+    <!--font-->
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+</head>
+  <body>
+    <div class="navbar-1">
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container-fluid">
+          <a class="navbar-brand" style="font-size: 38px;" href="/utama">MOCA</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon">&#8801;</span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{{ url_for('groups')}}"><img src="{{ url_for('static', filename='images/users-alt.png') }}" alt="Image">Groups</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img src="{{ url_for('static', filename='images/book-bookmark.png') }}" alt="Image">Learning
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="background-color :rgba(225, 71, 50, 0.79);">
+                  <li><a class="dropdown-item" href="{{ url_for('mentalsuport')}}"><img src="{{ url_for('static', filename='images/head-side-thinking.png') }}" alt="Image">Suport Mental</a></li>
+                  <li><a class="dropdown-item" href="{{ url_for('home') }}"><img src="{{ url_for('static', filename='images/hand-holding-heart.png') }}" alt="Image">Diagnosis Area</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img src="{{ url_for('static', filename='images/id-badge.png') }}" alt="Image">  Referral 
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="background-color :rgba(225, 71, 50, 0.79);">
+                  <li><a class="dropdown-item" href="{{ url_for('hospital')}}"><img src="{{ url_for('static', filename='images/hospital.png') }}" alt="Image">Hospital</a></li>
+                  <li><a class="dropdown-item" href="{{ url_for('consultan')}}"><img src="{{ url_for('static', filename='images/user-md.png') }}" alt="Image">Consultan</a></li>
+                  <li><a class="dropdown-item" href="{{ url_for('podcast')}}"> <img src="{{ url_for('static', filename='images/user-md-chat.png') }}" alt="Image"> Podcast</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="{{ url_for('profile')}}"><span id="span_1"><img src="{{ url_for('static', filename='images/user (1).png') }}" alt="Image"></span></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+      </nav>
+    </div>
+    {% block content%}
+      <!--content-->
+      <div class="container px-1 py-5 ">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+          <div class="col-12 col-sm-8 col-lg-6 ">
+            <img src="{{ url_for('static', filename='images/hero.jpg') }}" alt="Image" class="img-fluid " alt="icon" width="800" height="900" loading="lazy">
+          </div>
+          <div class="col-lg-6 ">
+            <h1 class="fw-bold mb-3 text-center">MOCA</h1>
+            <p class="lead fs-4 ">MO-CA is an application that is here as a solution to overcome this difficulty gap, an application that can be easily accessed by anyone, anytime, anywhere. An application created to help someone to solve the problem of psychological disorders due to suffering from chronic illness. Inside With this application, patients will receive mental support from professional health workers, sharing from families who have treated patients, as well as sharing from patients who have successfully recovered. This application has features in it including group chat, learning about handlers for the psychological impact that arises due to suffering from chronic illness, and the "Support Area" feature in which there is a video to support patients with chronic diseases</p>
+            </div>
+      </div>
+      </div>
+      <!--penjelasan 1-->
+      <hr>
+<div class="penjelsan1">
+  <div class="container col-xxl-8 px-4 py-5">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+      <div class="col-10 col-sm-8 col-lg-6">
+        <img src="{{ url_for('static', filename='images/botchat.jpg') }}" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+      </div>
+      <div class="col-lg-6">
+        <h1 class="display-5 fw-bold lh-1 mb-3">Bot Chat</h1>
+        <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+          <button class="btn btn-outline-secondary" type="button"><a class="nav-link text-decoration-none" href="{{ url_for('home') }}">GO</a></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <!--fitur selanjutnya-->
+  <div class="container py-4">
+    <header class="pb-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+        <span class="fs-4">More Features</span>
+      </a>
+    </header>
+
+    <div class="p-5 mb-4 bg-light rounded-3">
+      <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold">GROUPS DISCUSSION</h1>
+        <p class="col-md-8 fs-4">Group chat which contains sharing of experiences between patients and families who have treated patients. Then there is a private chat feature which contains online mental support and psychological treatment from professional health workers</p>
+        <button class="btn btn-outline-secondary" type="button">GO</button>
+      </div>
+    </div>
+
+    <div class="row align-items-md-stretch">
+      <div class="col-md-6">
+        <div class="h-100 p-5 text-white bg-dark rounded-3">
+          <h2>DIAGNOGIS AREA</h2>
+          <p>learning about handlers for the psychological impact that arises as a result of suffering from chronic illness, and finally there is a feature called "Support Area" in which there is a video to support patients with chronic illnesses.</p>
+          <button class="btn btn-outline-light" type="button">GO</button>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="h-100 p-5 bg-light border rounded-3">
+          <h2>POD CAST</h2>
+          <p>Or, keep it light and add a border for some added definition to the boundaries of your content. Be sure to look under the hood at the source HTML here as we've adjusted the alignment and sizing of both column's content for equal-height.</p>
+          <button class="btn btn-outline-secondary" type="button">GO</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<hr>
+{% endblock %}
+      <!--end-->
+      <!--FOOTER-->
+<!-- Remove the container if you want to extend the Footer to full width. -->
+<div class="container-1 my-5">
+
+  <!-- Footer -->
+  <footer
+          class="text-center text-lg-start text-white"
+          style="background-color: #1c2331"
+          >
+    <!-- Section: Social media -->
+    <section
+             class="d-flex justify-content-between p-4"
+             style="background-color:rgba(225, 71, 50, 0.79);"
+             >
+      <!-- Left -->
+      <div class="me-5">
+        <span>More of me</span>
+      </div>
+      <!-- Left -->
+
+      <!-- Right -->
+      <div>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-google"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h2 class="font-weight-bold">Moca</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: rgba(225, 71, 50, 0.79); height: 2px"
+                />
+            <p>
+              Here you can use rows and columns to organize your footer
+              content. Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit.
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h4 class="font-weight-bold">Features</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: rgba(225, 71, 50, 0.79); height: 2px"
+                />
+            <p>
+              <a href="#!" class="text-white">Groups</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">Learning</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">Referral</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">Bootstrap Angular</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h4 class="font-weight-bold">Suport</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: rgba(225, 71, 50, 0.79); height: 2px"
+                />
+            <h5>
+              <a href="#!" class="text-white">UNISSULA</a>
+            </h5>
+ 
+            <p>
+              <a href="#!" class="text-white">FKIP</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">FTI</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h3 class="font-weight-bold">Contact</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: rgba(225, 71, 50, 0.79); height: 2px"
+                />
+            <p><i class="fas fa-home mr-3"></i> IG</p>
+            <p><i class="fas fa-envelope mr-3"></i> EMAIL</p>
+            <p><i class="fas fa-phone mr-3"></i> PHONE</p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div
+         class="text-center p-3"
+         style="background-color: rgba(0, 0, 0, 0.2)"
+         >
+      © 2023 MOCA
+    </div>
+    <!-- Copyright -->
+</div>
+  </footer>
+  <!-- Footer -->
+<!-- End of .container -->
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
